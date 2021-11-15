@@ -1,11 +1,15 @@
 
+Download osu-micro-benchmarks-5.8.tgz (https://mvapich.cse.ohio-state.edu/benchmarks/) and openmpi-4.0.3.tar.gz (https://www.open-mpi.org/software/ompi/v4.0/). Place these files into your directory ```/home/username/Singularity_MPI/```. 
+
+Write the file *osu_benchmarks.def* with the following content:
+
 ```
 Bootstrap: docker
 From: ubuntu:20.04
 
 %files
-    /home/pedro/Singularity_MPI/osu-micro-benchmarks-5.8.tgz /root/
-    /home/pedro/Singularity_MPI/openmpi-4.0.3.tar.gz /root/
+    /home/username/Singularity_MPI/osu-micro-benchmarks-5.8.tgz /root/
+    /home/username/Singularity_MPI/openmpi-4.0.3.tar.gz /root/
 
 %environment
     export OSU_DIR=/usr/local/osu/libexec/osu-micro-benchmarks/mpi
@@ -29,4 +33,9 @@ enssh-server
 %runscript
     echo "Rank - About to run: ${OSU_DIR}/$*"
     exec ${OSU_DIR}/$*
+```
+run the command:
+
+```
+singularity osu_benchmarks.sif osu_benchmarks.def
 ```
