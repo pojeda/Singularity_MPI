@@ -1,3 +1,4 @@
+Test case adapted from: https://carpentries-incubator.github.io/singularity-introduction/08-singularity-mpi/index.html
 
 Download osu-micro-benchmarks-5.8.tgz (https://mvapich.cse.ohio-state.edu/benchmarks/) and openmpi-4.0.3.tar.gz (https://www.open-mpi.org/software/ompi/v4.0/). Place these files into your directory ```/home/username/Singularity_MPI/```. 
 
