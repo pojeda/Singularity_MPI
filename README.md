@@ -15,8 +15,7 @@ From: ubuntu:20.04
     export OSU_DIR=/usr/local/osu/libexec/osu-micro-benchmarks/mpi
 
 %post
-    apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get -y install build-essential libfabric-dev libibverbs-dev gfortran op
-enssh-server
+    apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get -y install build-essential libfabric-dev libibverbs-dev gfortran openssh-server
     cd /root
     tar zxvf openmpi-4.0.3.tar.gz && cd openmpi-4.0.3
     echo "Configuring and building OpenMPI..."
